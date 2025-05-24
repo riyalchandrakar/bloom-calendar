@@ -1,0 +1,136 @@
+/* CalendarDay.css */
+.calendar-day {
+  aspect-ratio: 1;
+  min-height: 70px;
+  padding: 4px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+}
+
+.calendar-day:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--hover-color, #f5f7fa);
+  z-index: 2; /* Bring hovered day above others */
+}
+
+.calendar-day.other-month {
+  color: var(--other-month-color, #aaa);
+  opacity: 0.7;
+}
+
+.calendar-day.today:not(.selected) {
+  border: 2px solid var(--today-color, #ff6b6b);
+}
+
+.calendar-day.selected {
+  background: var(--primary-color, #4a6cf7);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(74, 108, 247, 0.3);
+  z-index: 1; /* Ensure selected day stays above others */
+}
+
+.day-number-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 24px; /* Prevent number from being cut off */
+}
+
+.day-number {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap; /* Prevent number from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.today-indicator {
+  position: absolute;
+  top: -2px; /* Adjusted position */
+  right: -2px; /* Adjusted position */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--today-color, #ff6b6b);
+}
+
+.day-events-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: auto;
+  flex-wrap: wrap;
+  max-height: 24px; /* Limit height of event indicators */
+  overflow: hidden;
+}
+
+.event-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  flex-shrink: 0; /* Prevent dots from shrinking */
+}
+
+.calendar-day:hover .event-dot {
+  transform: scale(1.3);
+}
+
+.more-events {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.8;
+  flex-shrink: 0; /* Prevent "+n" from shrinking */
+  margin-left: 2px;
+}
+
+.calendar-day.selected .more-events,
+.calendar-day.selected .event-dot {
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Animation for selected day */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.calendar-day.selected {
+  animation: pulse 0.5s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .calendar-day {
+    min-height: 60px; /* Smaller on mobile */
+    padding: 4px;
+  }
+  
+  .day-number {
+    font-size: 0.8rem;
+  }
+  
+  .event-dot {
+    width: 4px;
+    height: 4px;
+  }
+  
+  .more-events {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,44 @@
+[
+    {
+      "date": "2025-05-15",
+      "startTime": "09:00",
+      "endTime": "10:30",
+      "color": "#f6be23",
+      "title": "Daily Standup"
+    },
+    {
+      "date": "2025-11-15",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "color": "#f6501e",
+      "title": "Client Meeting"
+    },
+    {
+      "date": "2025-11-20",
+      "startTime": "14:00",
+      "endTime": "15:30",
+      "color": "#2ecc71",
+      "title": "Project Review"
+    },
+    {
+      "date": "2025-11-25",
+      "startTime": "10:00",
+      "endTime": "11:30",
+      "color": "#3498db",
+      "title": "Team Workshop"
+    },
+    {
+      "date": "2025-11-25",
+      "startTime": "13:00",
+      "endTime": "14:30",
+      "color": "#9b59b6",
+      "title": "One-on-One"
+    },
+    {
+      "date": "2025-11-25",
+      "startTime": "13:30",
+      "endTime": "15:00",
+      "color": "#e74c3c",
+      "title": "Product Demo"
+    }
+  ]
